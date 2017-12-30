@@ -2,8 +2,8 @@
 
 import os
 
-from App.Regle import *
-
+from Regle import *
+from Renommage import *
 
 class Action:
 	
@@ -42,12 +42,3 @@ class Action:
 			nomfichier = os.listdir(self.nomdurepertoire)[0]
 		print(nomfichier)
 		print(apartirde+"-"+prefixe+"-"+nomfichier+"-"+postfixe+extension)
-
-regle1 = Regle("Aucune","","Vacances à Angoulême","nomdufichier","2017",".jpg")
-regle2 = Regle("Chiffre","23","Conférence sur le pain","","042016",".jpg")
-
-action1 = Action("E:\Documents\Developpement\Python\\renommage\\test",regle2)
-action1.simule()
-
-renommage1 = Renommage("E:\Documents\Developpement\Python\\renommage\\test",regle2)
-renommage1.renommer()

@@ -5,7 +5,8 @@ import configparser
 #config = null
 
 class Regle:
-	def __init__(self,amorce,apartirde,prefixe,nomfichier,postfixe,extension):
+	def __init__(self,nom,amorce,apartirde,prefixe,nomfichier,postfixe,extension):
+		self.nom = nom
 		self.amorce = amorce
 		self.apartirde = apartirde
 		self.prefixe = prefixe
@@ -14,7 +15,20 @@ class Regle:
 		self.extension = extension
 		
 	def __str__(self):
-		return "desc regle"
+		desc = "=== " + self.nom + " === \n"
+		desc += "Amorce : " + self.amorce + "\n"
+		desc += "A partir de : " + self.apartirde + "\n"
+		desc += "Préfixe : " + self.prefixe + "\n"
+		desc += "Nom fichier : " + self.nomfichier + "\n"
+		desc += "Postfixe : " + self.postfixe + "\n"
+		desc += "Extension : " + self.extension + "\n"
+		return desc
+
+	def getNom(self):
+		return self.nom
+
+	def setNom(self, nom):
+		self.nom = nom
 	
 	def getAmorce(self):
 		return self.amorce
